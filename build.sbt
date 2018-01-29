@@ -13,7 +13,8 @@ lazy val root = (project in file(".")).
     scalaVersion := "2.11.4",
     retrieveManaged := true,
     libraryDependencies += "com.amazonaws" % "aws-lambda-java-core" % "1.2.0",
-    libraryDependencies += "com.amazonaws" % "aws-lambda-java-events" % "1.2.0"
+    libraryDependencies += "com.amazonaws" % "aws-lambda-java-events" % "1.2.0",
+    libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.4" % Test
   )
 
 assemblyMergeStrategy in assembly := {
