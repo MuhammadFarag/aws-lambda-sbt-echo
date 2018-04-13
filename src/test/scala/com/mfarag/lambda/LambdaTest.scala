@@ -2,6 +2,7 @@ package com.mfarag.lambda
 
 import java.io.{ByteArrayInputStream, ByteArrayOutputStream, InputStream}
 
+import com.mfarag.lambda.LambdaTest._
 import org.scalatest.{FunSuite, Matchers}
 import play.api.libs.json.{Json, Reads, Writes}
 
@@ -20,5 +21,13 @@ class LambdaTest extends FunSuite with Lambda[Request, Result] with Matchers {
 
     output.toString("UTF-8") shouldBe """{"s":"HELLO WORLD"}"""
   }
+
+}
+
+object LambdaTest {
+
+  case class Request(s: String)
+
+  case class Result(s: String)
 
 }
