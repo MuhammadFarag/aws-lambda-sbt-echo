@@ -1,9 +1,9 @@
 package com.mfarag
 
-import com.mfarag.core.LambdaCore
+import com.mfarag.core.Lambda
 import play.api.libs.json.{Json, Reads, Writes}
 
-object Lambda extends LambdaCore[Request, Result] {
+class Main extends Lambda[Request, Result] {
 
   implicit protected val reads: Reads[Request] = Json.reads[Request]
   implicit protected val writes: Writes[Result] = Json.writes[Result]

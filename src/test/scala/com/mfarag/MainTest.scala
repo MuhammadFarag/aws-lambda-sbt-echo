@@ -1,4 +1,4 @@
-package com.mfarag.core
+package com.mfarag
 
 import java.io.{ByteArrayInputStream, ByteArrayOutputStream, InputStream}
 
