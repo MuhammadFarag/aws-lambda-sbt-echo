@@ -14,6 +14,7 @@ lazy val root = (project in file(".")).
     retrieveManaged := true,
     libraryDependencies += "com.amazonaws" % "aws-lambda-java-core" % "1.2.0",
     libraryDependencies += "com.amazonaws" % "aws-lambda-java-events" % "1.2.0",
+    libraryDependencies += "com.typesafe.play" %% "play-json" % "2.6.9",
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.4" % Test
   )
 
