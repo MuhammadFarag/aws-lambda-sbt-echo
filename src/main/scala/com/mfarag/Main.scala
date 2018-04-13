@@ -14,9 +14,7 @@ class Main {
 }
 
 trait Lambda[A, B] {
-  def process(s: String): String = {
-    resultToJson(lambda(jsonToRequest(s)))
-  }
+  def process(s: String): String = resultToJson(lambda(jsonToRequest(s)))
 
   implicit val x: Reads[A]
   implicit val y: Writes[B]
