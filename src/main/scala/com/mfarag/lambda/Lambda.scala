@@ -1,4 +1,4 @@
-package com.mfarag.core
+package com.mfarag.lambda
 
 import java.io.{InputStream, OutputStream}
 

@@ -1,3 +1,3 @@
-package com.mfarag
+package com.mfarag.lambda
 
 case class Result(s: String)
