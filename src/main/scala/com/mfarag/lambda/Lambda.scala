@@ -9,16 +9,18 @@ import scala.io.Source
 trait Lambda[A, B] {
 
   implicit protected val reads: Reads[A]
+
   implicit protected val writes: Writes[B]
+
+  def lambda(r: A): B
 
   def process(input: InputStream, output: OutputStream): Unit =
     output.write(process(Source.fromInputStream(input).mkString).getBytes)
 
-  private def process(s: String): String = resultToJson(lambda(jsonToRequest(s)))
+  private def process(request: String): String = toJson(lambda(fromJson(request)))
 
-  def jsonToRequest(s: String): A = Json.parse(s).as[A]
+  private def fromJson(request: String): A = Json.parse(request).as[A]
 
-  def resultToJson(r: B): String = Json.stringify(Json.toJson(r))
+  private def toJson(result: B): String = Json.stringify(Json.toJson(result))
 
-  def lambda(r: A): B
 }
